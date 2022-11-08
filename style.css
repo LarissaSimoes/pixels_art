@@ -5,6 +5,20 @@
     width: 50px;
     height: 50px;
    }
-   #black {
+   
+#black {
     background-color: black;
    }
+
+.pixel {
+    background-color: white;
+    border: 1px solid black;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+#pixel-board {
+    width: 250px;
+    height: 250px;
+}

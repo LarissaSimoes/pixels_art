@@ -15,4 +15,19 @@ function colorGenerator() {
  window.onload = randomColors;
  const colorButton = document.querySelector('#button-random-color');
  colorButton.addEventListener('click', randomColors);
+ localStorage.setItem('colorPalette',JSON.stringify(randomColors));
 
+ const pixelBoard = document.querySelector('#pixel-board');
+
+ const criaPixels = () => {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixelBoard.appendChild(pixel);
+ }
+
+ pixelBoardFunction = (numberOfPixels) => {
+    for (let i = 0; i < numberOfPixels; i += 1){
+        criaPixels();
+    }
+ }
+ pixelBoardFunction(25);

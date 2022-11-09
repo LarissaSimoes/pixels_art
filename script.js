@@ -31,3 +31,20 @@ function colorGenerator() {
     }
  }
  pixelBoardFunction(25);
+
+const colorPalette = document.getElementsByClassName('color');
+
+removeSelected = () => {
+   for (let i = 0; i < colorPalette.length; i += 1) {
+      colorPalette[i]. classList.remove('selected');
+   }
+}
+
+selectColor = (event) => {
+   event.target.classList.add('selected');
+}
+
+for (let i = 0; i < colorPalette.length; i += 1){
+   colorPalette[i].addEventListener('click', removeSelected);
+   colorPalette[i].addEventListener('click', selectColor);
+}

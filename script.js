@@ -48,3 +48,24 @@ for (let i = 0; i < colorPalette.length; i += 1){
    colorPalette[i].addEventListener('click', removeSelected);
    colorPalette[i].addEventListener('click', selectColor);
 }
+
+pixelBoard.addEventListener('click', (event) => {
+   const pixel = event.target;
+   if (pixel.className === 'pixel') {
+     pixel.style.backgroundColor = window
+       .getComputedStyle(document.querySelector('.selected'))
+       .getPropertyValue('background-color');
+   }
+ });
+
+ clearBoard = () => {
+   const pixel = document.querySelectorAll('.pixel');
+   const clearBoardButton = document.getElementById('clear-board');
+   clearBoardButton.addEventListener('click', () =>{
+      for(i = 0; i < pixel.length; i += 1){
+         pixel[i].style.backgroundColor = 'white'
+      }
+   }
+   )
+ }
+ clearBoard();
